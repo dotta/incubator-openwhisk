@@ -40,11 +40,6 @@ import org.apache.openwhisk.spi.SpiLoader
 import pureconfig._
 import scala.reflect.classTag
 
-package object types {
-  type AuthStore = ArtifactStore[WhiskAuth]
-  type EntityStore = ArtifactStore[WhiskEntity]
-}
-
 case class DBConfig(actionsDdoc: String, activationsDdoc: String, activationsFilterDdoc: String)
 
 protected[core] trait WhiskDocument extends DocumentSerializer with DocumentRevisionProvider {
