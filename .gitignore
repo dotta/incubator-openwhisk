@@ -83,6 +83,7 @@ ansible/roles/invoker/files/*
 
 # dev
 intellij-run-config.groovy
+.hydra
 
 # VSCode
 .vscode/

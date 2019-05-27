@@ -20,13 +20,22 @@ plugins {
 }
 
 apply plugin: 'eclipse'
-apply plugin: 'scala'
+apply plugin: 'com.triplequote.hydra'
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://repo.triplequote.com/libs-release/"
+    }
+}
+
+hydra {
+  metricsServiceVersion = "1.1.0"
+  version = "2.1.4"
 }
 
 dependencies {
+    compile "org.scala-lang:scala-library:${gradle.scala.version}"
     gatling "io.spray:spray-json_2.12:1.3.4"
     gatling "commons-io:commons-io:2.6"
 }

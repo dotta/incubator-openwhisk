@@ -20,9 +20,10 @@ import static groovy.json.JsonOutput.*
 
 plugins {
     id 'org.hidetake.swagger.generator' version '2.12.0'
+    id "com.triplequote.hydra" version "0.0.2"
 }
 
-apply plugin: 'scala'
+apply plugin: 'com.triplequote.hydra'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
 apply plugin: 'org.scoverage'
@@ -30,6 +31,14 @@ compileTestScala.options.encoding = 'UTF-8'
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://repo.triplequote.com/libs-release/"
+    }
+}
+
+hydra {
+  metricsServiceVersion = "1.1.0"
+  version = "2.1.4"
 }
 
 install.dependsOn ':tools:admin:install'
